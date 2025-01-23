@@ -1,0 +1,29 @@
+.posts__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  display: flex;
+  gap: 20px;
+}
+
+.post__info {
+  flex-grow: 1;
+}
+
+.post__item {
+  display: flex;
+  gap: 20px;
+}
+
+.post__avatar {
+  border-radius: 50%;
+  height: 50px;
+  aspect-ratio: 1 / 1;
+}
+
+.post__fullname {
+  margin-top: 6px;
+}

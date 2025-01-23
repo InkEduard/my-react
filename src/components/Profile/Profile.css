@@ -1,0 +1,37 @@
+.profile {
+  display: flex;
+  gap: 20px;
+}
+
+.profile__content {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.profile__image {
+  border-radius: 50%;
+  height: 120px;
+  aspect-ratio: 1 / 1;
+}
+
+.profile__fullname {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile__row {
+  display: flex;
+  gap: 6px;
+}
+
+.profile__subtitle {
+  color: #789de6;
+}
