@@ -10,8 +10,8 @@ const MyPosts = () => {
     <div className="posts">
       <NewPosts />
       <div className="posts__inner">
-        <Post name="Artur O." message="+ rep" avatar={PostAvatarSecond} />
-        <Post name="Maxim L." message="Hello!" avatar={PostAvatar} />
+        <Post name="Artur O." message="+ rep" avatar={PostAvatarSecond} likesCount="5" />
+        <Post name="Maxim L." message="Hello!" avatar={PostAvatar} likesCount="7" />
       </div>
     </div>
   );

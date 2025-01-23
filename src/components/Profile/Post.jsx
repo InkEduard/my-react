@@ -7,6 +7,9 @@ const Post = (props) => {
     <div className="post__info">
       <h3 className="post__fullname">{props.name}</h3>
       <p>{props.message}</p>
+      <div>
+        <span>like: </span> <span>{props.likesCount}</span>
+      </div>
     </div>
   </div>
   );
