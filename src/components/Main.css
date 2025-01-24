@@ -1,9 +1,18 @@
-.main {
+.app-main {
   display: flex;
-  gap: 20px;
-  padding: 10px;
+  padding: 20px 10px;
 }
 
-.content {
+.app-inner {
+  display: flex;
+  gap: 20px;
+}
+
+.app-content {
+  background-color: #1e1e1f;
+  border: 1px solid #383838;
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
   flex-grow: 1;
+  padding: 20px;
 }

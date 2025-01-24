@@ -10,8 +10,16 @@ const MyPosts = () => {
     <div className="posts">
       <NewPosts />
       <div className="posts__inner">
-        <Post name="Artur O." message="+ rep" avatar={PostAvatarSecond} likesCount="5" />
-        <Post name="Maxim L." message="Hello!" avatar={PostAvatar} likesCount="7" />
+        <Post
+          name="Artur O."
+          message="+ Rep"
+          avatar={PostAvatarSecond}
+          likesCount="5" />
+        <Post
+          name="Maxim L."
+          message="React.js is an amazing library for building user interfaces, combining simplicity with power. Its component-based approach and declarative coding style make app development intuitive and convenient. Hooks and optimized rendering make state management effortless while boosting performance. It's a tool that brings freedom and joy to creating modern web applications!"
+          avatar={PostAvatar}
+          likesCount="7" />
       </div>
     </div>
   );

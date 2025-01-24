@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #1e1e1f;
+  border: 1px solid #383838;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.navbar__inner {
+  position: sticky;
+  top: 20px;
+}
+
+.navbar__list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0 0 40px;
+  gap: 16px;
+  padding: 0;
+  width: 260px;
+}
+
+.navbar__link.navbar__link--active {
+  color: rgb(255, 255, 255);
+}

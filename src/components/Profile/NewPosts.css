@@ -6,29 +6,14 @@
 }
 
 .new-posts__field {
-  border: 1px solid #414656;
+  background-color: transparent;
+  border: 1px solid rgb(56, 56, 56);
   border-radius: 10px;
+  color: rgb(255, 255, 255);
   padding: 20px;
   resize: none;
 }
 
 .new-posts__button {
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  background-color: #3e6aae;
-  border-radius: 6px;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  padding: 10px 30px;
-  text-decoration: none;
-}
-
-.new-posts__button:hover {
-  background-color: #838ad8;
-}
-
-.new-posts__button {
-  margin-left: auto;
+  max-width: 160px;
 }
