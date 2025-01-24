@@ -11,7 +11,7 @@ const NewPosts = () => {
           placeholder="Add news"
           cols="30"
           rows="10"></textarea>
-        <button className="new-posts__button">Send</button>
+        <button className="app-button new-posts__button">Send</button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './TopBanner.module.css';
-import Banner from './../../react-banner.jpg';
+import Banner from './../../react-banner-2.jpg';
 
 const TopBanner = () => {
   return (

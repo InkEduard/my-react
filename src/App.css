@@ -1,12 +1,105 @@
+@font-face {
+  font-family: "Ubuntu", serif;
+  src: url("./fonts/Ubuntu-Light.woff2") format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu", serif;
+  src: url("./fonts/Ubuntu-Regular.woff2") format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu", serif;
+  src: url("./fonts/Ubuntu-Medium.woff2") format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu", serif;
+  src: url("./fonts/Ubuntu-Bold.woff2") format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  color: #414656;
+  background-color: #191919;
+  color: #fafafa;
+  font-family: "Ubuntu", sans-serif;
+}
+
+a {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.app-button,
+.app-button-secondary {
+  align-items: center;
+  background: linear-gradient(to bottom right, rgb(64, 64, 64) 0%, rgb(64, 64, 64, 0) 100%);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.125);
+  border: 1px solid rgb(64, 64, 64);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffdb70;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  list-style: 1;
+  gap: 10px;
+  margin-left: auto;
+  padding: 16px 20px;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  width: 100%;
+}
+
+.app-button:hover {
+  background: linear-gradient(to bottom right, rgb(45, 45, 46) 0%, rgba(45, 45, 46, 0) 100%);
+}
+
+.app-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-button-secondary {
+  background: linear-gradient(to bottom right, rgba(255, 218, 107, 0.2) 0%, rgba(255, 218, 107, 0) 100%);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.125);
+  border: 1px solid rgba(255, 218, 107, 0.2);
+}
+
+.app-button-secondary:hover {
+  background: linear-gradient(to bottom right, rgba(255, 218, 107, 0.1) 0%, rgba(255, 218, 107, 0) 100%);
 }
 
 .app-wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
+}
+
+.app-main {
+  flex-grow: 1;
+}
+
+.app-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
