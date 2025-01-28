@@ -11,20 +11,20 @@ const MyPosts = () => {
     { id: '2', name:'Artur O.', avatar: `${PostAvatarSecond}`, message: '+ Rep', likesCount: 5 }
   ];
 
+  let postsElements = postsData.map( (element, i) => {
+    return <Post
+      key={i}
+      name={element.name}
+      message={element.message}
+      avatar={element.avatar}
+      likesCount={element.likesCount} />
+  });
+
   return (
     <div className="posts">
       <NewPosts />
       <div className="posts__inner">
-        <Post
-          name={postsData[0].name}
-          message={postsData[0].message}
-          avatar={postsData[0].avatar}
-          likesCount={postsData[0].likesCount} />
-        <Post
-          name={postsData[1].name}
-          message={postsData[1].message}
-          avatar={postsData[1].avatar}
-          likesCount={postsData[1].likesCount} />
+        {postsElements}
       </div>
     </div>
   );
