@@ -22,6 +22,6 @@
   width: 260px;
 }
 
-.navbar__link.navbar__link--active {
+.navbar__link.active {
   color: rgb(255, 255, 255);
 }
