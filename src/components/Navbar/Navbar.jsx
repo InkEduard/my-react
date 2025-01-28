@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -7,47 +8,47 @@ const Navbar = () => {
       <div className="navbar__inner">
         <ul className="navbar__list">
           <li>
-            <a className="app-button navbar__link navbar__link--active" href="#p" title="Profile">
+            <NavLink className="app-button navbar__link" to="/profile" title="Profile">
               <span className="app-button-icon">
                 <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z" fill="currentColor"/>
                 </svg>
               </span>
               <span>Profile</span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className="app-button navbar__link" href="#m" title="Message">
+            <NavLink className="app-button navbar__link" to="/dialogs" title="Message">
               <span className="app-button-icon">
                 <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path d="M160 368c26.5 0 48 21.5 48 48l0 16 72.5-54.4c8.3-6.2 18.4-9.6 28.8-9.6L448 368c8.8 0 16-7.2 16-16l0-288c0-8.8-7.2-16-16-16L64 48c-8.8 0-16 7.2-16 16l0 288c0 8.8 7.2 16 16 16l96 0zm48 124l-.2 .2-5.1 3.8-17.1 12.8c-4.8 3.6-11.3 4.2-16.8 1.5s-8.8-8.2-8.8-14.3l0-21.3 0-6.4 0-.3 0-4 0-48-48 0-48 0c-35.3 0-64-28.7-64-64L0 64C0 28.7 28.7 0 64 0L448 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64l-138.7 0L208 492z" fill="currentColor"/>
                 </svg>
               </span>
-              <span>Message</span>
-            </a>
+              <span>Messages</span>
+            </NavLink>
           </li>
           <li>
-            <a className="app-button navbar__link" href="#n" title="News">
+            <NavLink className="app-button navbar__link" to="/news" title="News">
               <span className="app-button-icon">
                 <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path d="M168 80c-13.3 0-24 10.7-24 24l0 304c0 8.4-1.4 16.5-4.1 24L440 432c13.3 0 24-10.7 24-24l0-304c0-13.3-10.7-24-24-24L168 80zM72 480c-39.8 0-72-32.2-72-72L0 112C0 98.7 10.7 88 24 88s24 10.7 24 24l0 296c0 13.3 10.7 24 24 24s24-10.7 24-24l0-304c0-39.8 32.2-72 72-72l272 0c39.8 0 72 32.2 72 72l0 304c0 39.8-32.2 72-72 72L72 480zM176 136c0-13.3 10.7-24 24-24l96 0c13.3 0 24 10.7 24 24l0 80c0 13.3-10.7 24-24 24l-96 0c-13.3 0-24-10.7-24-24l0-80zm200-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z" fill="currentColor"/>
                 </svg>
               </span>
               <span>News</span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className="app-button navbar__link" href="#i" title="Images">
+            <NavLink className="app-button navbar__link" to="/images" title="Images">
               <span className="app-button-icon">
                 <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path d="M448 80c8.8 0 16 7.2 16 16l0 319.8-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3L48 96c0-8.8 7.2-16 16-16l384 0zM64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z" fill="currentColor"/>
                 </svg>
               </span>
               <span>Images</span>
-            </a>
+            </NavLink>
           </li>
         </ul>
-        <a href="#s" className="app-button-secondary navbar__settings" title="Settings">
+        <NavLink className="app-button-secondary navbar__settings" to="/settings" title="Settings">
           <span className="app-button-icon">
             <svg height="16" width="16" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
               <g id="settings">
@@ -58,7 +59,7 @@ const Navbar = () => {
             </svg>
           </span>
           <span>Settings</span>
-        </a>
+        </NavLink>
       </div>
     </nav>
   );

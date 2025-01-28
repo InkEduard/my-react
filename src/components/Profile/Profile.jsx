@@ -6,7 +6,7 @@ import './Profile.css';
 
 const Profile = () => {
   return (
-    <div className="app-content-inner">
+    <div>
       <TopBanner />
       <ProfileInfo />
       <MyPosts />
