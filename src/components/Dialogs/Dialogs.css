@@ -5,7 +5,8 @@
 }
 
 .dialogs-items {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
 }
 
@@ -18,8 +19,23 @@
   border: 1px solid rgb(56, 56, 56);
   border-radius: 10px;
   color: rgb(255, 255, 255);
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
   width: 100%;
+}
+
+.dialogs-items__link:hover {
+  border-color: rgba(255, 218, 107, 0.3);
+  color: rgb(255, 219, 112);
+}
+
+.dialogs-items__avatar {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  height: 30px;
+  aspect-ratio: 1 / 1;
 }
 
 .dialogs-items__link.active {
@@ -31,5 +47,40 @@
   border: 1px solid rgb(56, 56, 56);
   border-radius: 10px;
   color: rgb(255, 255, 255);
-  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px;
+}
+
+.dialogs-messages__item[data-name='you'] {
+  text-align: right;
+}
+
+.dialogs-messages__item[data-name='companion'] + .dialogs-messages__item[data-name='companion'] img,
+.dialogs-messages__item[data-name='you'] + .dialogs-messages__item[data-name='you'] img {
+  display: none;
+}
+
+.dialogs-messages__item[data-name='companion'] + .dialogs-messages__item[data-name='companion'] p,
+.dialogs-messages__item[data-name='you'] + .dialogs-messages__item[data-name='you'] p {
+  margin-top: 0;
+}
+
+.dialogs-messages__avatar {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  height: 30px;
+  aspect-ratio: 1 / 1;
+}
+
+.dialogs-messages__message {
+  margin-bottom: 0;
+  margin-top: 5px;
+  max-width: 70%;
+  width: 100%;
+}
+
+.dialogs-messages__item[data-name='you'] .dialogs-messages__message {
+  margin-left: auto;
 }
