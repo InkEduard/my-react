@@ -1,15 +1,19 @@
 import React from "react";
-import TopBanner from './TopBanner';
-import ProfileInfo from './ProfileInfo';
-import MyPosts from './MyPosts';
+import TopBanner from './TopBanner/TopBanner';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
+import MyPosts from './MyPosts/MyPosts';
 import './Profile.css';
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div>
       <TopBanner />
-      <ProfileInfo />
-      <MyPosts />
+      <ProfileInfo user={props.user} />
+      <MyPosts
+        postsData={props.profilePage.postsData}
+        updateNewPostText={props.updateNewPostText}
+        newPostText={props.profilePage.newPostText}
+        addPost={props.addPost} />
     </div>
   );
 };

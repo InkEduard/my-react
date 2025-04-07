@@ -1,24 +1,26 @@
 import React from "react";
-import Avatar from './..//../avatar.png';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  const phoneNumber = props.user.phone;
+  const editPhoneNumber = phoneNumber.replace(/[()\s.-]/g, '');
+
   return (
     <div className="profile">
-      <img className="profile__image" src={Avatar} alt="Avatar" />
+      <img className="profile__image" src={props.user.avatar} alt="Avatar" />
       <div className="profile__content">
-        <h1 className="profile__fullname">Eduard P.</h1>
+        <h1 className="profile__fullname">{props.user.name}</h1>
         <div className="profile__info">
           <div className="profile__row profile__row--date">
             <span className="profile__subtitle">Birthday:</span>
-            <span className="profile__birthday">2 March 1994</span>
+            <span className="profile__birthday">{props.user.birthday}</span>
           </div>
           <div className="profile__row profile__row--location">
             <span className="profile__subtitle">City:</span>
-            <span className="profile__city">London</span>
+            <span className="profile__city">{props.user.city}</span>
           </div>
           <div className="profile__row profile__row--phone">
             <span className="profile__subtitle">Phone:</span>
-            <a href="tel:+15555555555" className="profile__phone" title="+1 (555) 555-5555">+1 (555) 555-5555</a>
+            <a href={`tel:${editPhoneNumber}`} className="profile__phone" title="{props.user.phone}">{props.user.phone}</a>
           </div>
         </div>
       </div>
