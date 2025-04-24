@@ -3,6 +3,12 @@ import PostAvatarSecond from './../post-avatar-2.png';
 import PostAvatarIncognito from './../incognito.jpg';
 import Avatar from './../avatar.png';
 
+// Action Type
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 let store = {
   _state: {
     user: {
@@ -43,54 +49,110 @@ let store = {
       ]
     }
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     console.log('State changed');
   },
-  addPost() {
-    debugger;
-    const id = this._state.profilePage.postsData.length + 1
-    const newPost = {
-      id: `${id}`,
-      name: 'Incognito',
-      avatar: `${PostAvatarIncognito}`,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0
-    }
-    if (this._state.profilePage.newPostText.length > 0) {
-      this._state.profilePage.postsData.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    }
-  },
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-  addMessage() {
-    const id = this._state.dialogsPage.messageData.length + 1
-    const newMessage = {
-      id: `${id}`,
-      name: 'you',
-      avatar: `${Avatar}`,
-      message: this._state.dialogsPage.newMessageText
-    }
-    if (this._state.dialogsPage.newMessageText.length > 0) {
-      this._state.dialogsPage.messageData.push(newMessage);
-      this._state.dialogsPage.newMessageText = '';
-      this._callSubscriber(this._state);
-    }
-  },
-  updateNewMessageText(newText) {
-    this._state.dialogsPage.newMessageText = newText;
-    this._callSubscriber(this._state);
+
+  getState() {
+    return this._state;
   },
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+
+  // addPost() {
+  //   const id = this._state.profilePage.postsData.length + 1
+  //   const newPost = {
+  //     id: `${id}`,
+  //     name: 'Incognito',
+  //     avatar: `${PostAvatarIncognito}`,
+  //     message: this._state.profilePage.newPostText,
+  //     likesCount: 0
+  //   }
+  //   if (this._state.profilePage.newPostText.length > 0) {
+  //     this._state.profilePage.postsData.push(newPost);
+  //     this._state.profilePage.newPostText = '';
+  //     this._callSubscriber(this._state);
+  //   }
+  // },
+  // updateNewPostText(newText) {
+  //   this._state.profilePage.newPostText = newText;
+  //   this._callSubscriber(this._state);
+  // },
+  // addMessage() {
+  //   const id = this._state.dialogsPage.messageData.length + 1
+  //   const newMessage = {
+  //     id: `${id}`,
+  //     name: 'you',
+  //     avatar: `${Avatar}`,
+  //     message: this._state.dialogsPage.newMessageText
+  //   }
+  //   if (this._state.dialogsPage.newMessageText.length > 0) {
+  //     this._state.dialogsPage.messageData.push(newMessage);
+  //     this._state.dialogsPage.newMessageText = '';
+  //     this._callSubscriber(this._state);
+  //   }
+  // },
+  // updateNewMessageText(newText) {
+  //   this._state.dialogsPage.newMessageText = newText;
+  //   this._callSubscriber(this._state);
+  // },
+
+  dispatch(action) { // { type: 'ADD-POST' }
+    if (action.type === ADD_POST) {
+
+      const id = this._state.profilePage.postsData.length + 1
+      const newPost = {
+        id: `${id}`,
+        name: 'Incognito',
+        avatar: `${PostAvatarIncognito}`,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0
+      }
+      if (this._state.profilePage.newPostText.length > 0) {
+        this._state.profilePage.postsData.push(newPost);
+        this._state.profilePage.newPostText = '';
+        this._callSubscriber(this._state);
+      }
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === ADD_MESSAGE) {
+      const id = this._state.dialogsPage.messageData.length + 1
+      const newMessage = {
+        id: `${id}`,
+        name: 'you',
+        avatar: `${Avatar}`,
+        message: this._state.dialogsPage.newMessageText
+      }
+      if (this._state.dialogsPage.newMessageText.length > 0) {
+        this._state.dialogsPage.messageData.push(newMessage);
+        this._state.dialogsPage.newMessageText = '';
+        this._callSubscriber(this._state);
+      }
+    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+      this._state.dialogsPage.newMessageText = action.newText;
+      this._callSubscriber(this._state);
+    }
   }
 }
+
+// Action Creator for new posts
+export const addPostActionCreator = () => ({ type: ADD_POST }); // short format, when function returns something
+export const updateNewPostTextActionCreator = (text) => { // long format
+  return {
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text
+  };
+};
+// Action Creator for new messages
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE }); // short format, when function returns something
+export const updateNewMessageTextActionCreator = (text) => { // long format
+  return {
+    type: UPDATE_NEW_MESSAGE_TEXT,
+    newText: text
+  };
+};
 
 window.store = store;
 
