@@ -1,10 +1,12 @@
 import React from "react";
-import NewPosts from "../NewPosts/NewPosts";
+import NewPostsContainer from "../NewPosts/NewPostsContainer";
 import Post from "./Post/Post";
 import './MyPosts.css';
 
 const MyPosts = (props) => {
-  let postsElements = props.postsData.map( (element, i) => {
+  let state = props.store.getState();
+
+  let postsElements = state.profilePage.postsData.map( (element, i) => {
     return <Post
       key={i}
       name={element.name}
@@ -15,7 +17,7 @@ const MyPosts = (props) => {
 
   return (
     <div className="posts">
-      <NewPosts dispatch={props.dispatch} newPostText={props.newPostText} />
+      <NewPostsContainer store={props.store} />
       <div className="posts__inner">
         {postsElements}
       </div>

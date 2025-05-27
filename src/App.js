@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 // import Main from './components/Main';
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import News from "./components/News/News";
 import Images from "./components/Images/Images";
 import Settings from "./components/Settings/Settings";
@@ -26,19 +26,13 @@ const App = (props) => {
                 <Route
                   path="profile"
                   element={
-                    <Profile
-                      profilePage={props.state.profilePage}
-                      dispatch={props.dispatch}
-                      user={props.state.user} />
+                    <Profile store={props.store} />
                   }
                 />
                 <Route
                   path="dialogs"
                   element={
-                    <Dialogs
-                      dispatch={props.dispatch}
-                      state={props.state.dialogsPage}
-                      user={props.state.user} />
+                    <DialogsContainer store={props.store} />
                   }
                 />
                 <Route path="news" element={<News />} />
